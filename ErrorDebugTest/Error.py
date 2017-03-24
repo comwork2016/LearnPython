@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-print 'try except rasie:--------------'
+import logging
+logging.basicConfig(level=logging.DEBUG,format='%(levelname)s: %(asctime)s - %(filename)s:%(lineno)s - %(message)s')
 
-from ErrorDebugTest import logging
-
-logging.basicConfig(level=logging.INFO)
+logging.info('try except rasie:--------------')
 
 def foo(s):
     return 10 / int(s)

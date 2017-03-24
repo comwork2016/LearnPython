@@ -7,16 +7,18 @@
 # 由于unittest.TestCase提供了很多内置的条件判断，我们只需要调用这些方法就可以断言输出是否是我们所期望的。最常用的断言就是assertEquals()：
 
 import unittest
-
 from mydict import Dict
+import logging
+logging.basicConfig(level=logging.DEBUG,format='%(levelname)s: %(asctime)s - %(filename)s:%(lineno)s - %(message)s')
+
 
 class TestDict(unittest.TestCase):
 
     def setUp(self):
-        print 'setUp...'
+        logging.debug('setUp...')
 
     def tearDown(self):
-        print 'tearDown...'
+        logging.debug('tearDown...')
 
     def test_init(self):
         d = Dict(a=1,b='test')
